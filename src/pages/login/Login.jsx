@@ -65,7 +65,7 @@ if(userDetail?.logemail !== user?.email && userDetail?.logpassword !== user?.pas
 }
 
   return (
-    <Stack width={'100%'} height={'70vh'} background={'rgb(14, 25, 71)'}>
+    <Stack width={'100%'} height={'90vh'} background={'rgb(14, 25, 71)'}>
     <Flex
         paddingTop={'100px'} 
         alignItems={'center'} 
