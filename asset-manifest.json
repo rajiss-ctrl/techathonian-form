@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/techathonian-form/static/css/main.ffe34ec7.css",
-    "main.js": "/techathonian-form/static/js/main.edbb4218.js",
+    "main.js": "/techathonian-form/static/js/main.bc8d87ed.js",
     "static/media/computer_man.png": "/techathonian-form/static/media/computer_man.85c6350516898dfa8211.png",
     "static/media/techathon.png": "/techathonian-form/static/media/techathon.c1433d7dad2af9980d88.png",
     "index.html": "/techathonian-form/index.html",
     "main.ffe34ec7.css.map": "/techathonian-form/static/css/main.ffe34ec7.css.map",
-    "main.edbb4218.js.map": "/techathonian-form/static/js/main.edbb4218.js.map"
+    "main.bc8d87ed.js.map": "/techathonian-form/static/js/main.bc8d87ed.js.map"
   },
   "entrypoints": [
     "static/css/main.ffe34ec7.css",
-    "static/js/main.edbb4218.js"
+    "static/js/main.bc8d87ed.js"
   ]
 }
