@@ -38,26 +38,20 @@ const handleLoginChange = (e)=>{
 
 },[])
     
-
-// Warning: A component is changing an uncontrolled input to be controlled. 
-// This is likely caused by the value changing from undefined to a defined value,
-//  which should not happen. Decide between using a controlled
-//  or uncontrolled input element for the lifetime of the component. More info
-
-
-
 const handleLoginSubmit = (e)=>{
  e.preventDefault()
 
  console.log(user)
- //compare the input of the user to session storage record before giving access
+ //errror msg
  let err= 'Details not match with user records!'
+ //compare the input of the user to session storage record before giving access
 if(userDetail?.logemail !== user?.email && userDetail?.logpassword !== user?.password){
   console.log('not match')
   setLoginErr(err)
 }else{
+  //get email of registered user
   const authUser = user.email
-  
+  //save the registered users emial in session storage for protected routr logic
   sessionStorage.getItem('authUser') === null &&
   sessionStorage.setItem('authUser',JSON.stringify(authUser)) 
   navigate('/dashboard') 
