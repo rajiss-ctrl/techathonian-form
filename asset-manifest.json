@@ -1,15 +1,14 @@
 {
   "files": {
-    "main.css": "/techathonian-form/static/css/main.ffe34ec7.css",
-    "main.js": "/techathonian-form/static/js/main.bc8d87ed.js",
-    "static/media/computer_man.png": "/techathonian-form/static/media/computer_man.85c6350516898dfa8211.png",
-    "static/media/techathon.png": "/techathonian-form/static/media/techathon.c1433d7dad2af9980d88.png",
+    "main.css": "/techathonian-form/static/css/main.1bea42de.css",
+    "main.js": "/techathonian-form/static/js/main.5fa05323.js",
+    "static/media/computer_man.png": "/techathonian-form/static/media/computer_man.4bb8d14a693c7f09167d.png",
     "index.html": "/techathonian-form/index.html",
-    "main.ffe34ec7.css.map": "/techathonian-form/static/css/main.ffe34ec7.css.map",
-    "main.bc8d87ed.js.map": "/techathonian-form/static/js/main.bc8d87ed.js.map"
+    "main.1bea42de.css.map": "/techathonian-form/static/css/main.1bea42de.css.map",
+    "main.5fa05323.js.map": "/techathonian-form/static/js/main.5fa05323.js.map"
   },
   "entrypoints": [
-    "static/css/main.ffe34ec7.css",
-    "static/js/main.bc8d87ed.js"
+    "static/css/main.1bea42de.css",
+    "static/js/main.5fa05323.js"
   ]
 }
