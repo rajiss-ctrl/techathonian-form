@@ -56,36 +56,48 @@ if(userDetail?.logemail !== user?.email && userDetail?.logpassword !== user?.pas
   sessionStorage.setItem('authUser',JSON.stringify(authUser)) 
   navigate('/dashboard') 
 }
+
 }
 
   return (
-    <Stack width={'100%'} height={'90vh'} background={'rgb(14, 25, 71)'}>
+    <Stack
+        fontFamily={'Manrope'} 
+        width={'100%'} height={'90vh'}  
+        background={'#e7e7d8'}
+        alignItems={'center'} 
+        justifyContent={'center'} 
+        flexDirection={'column'}
+        paddingBottom={'50px'}
+        >
     <Flex
-        paddingTop={'100px'} 
+      width={['100%','100%','100%','60%','60%']}
+        // paddingTop={'100px'} 
         alignItems={'center'} 
         justifyContent={'center'} 
         flexDirection={'column'}
         >
-        <Heading fontSize={{base:'23px', md:'35px'}} color={'#fff'}>Log in Techathonian</Heading>
-      <form style={{width:'70%'}}  >
+        <Heading fontSize={{base:'23px', md:'35px'}} padding={'40px'} color={'rgb(29, 175, 210)'}>Log in Techathonian</Heading>
+      <form style={{width:'90%', background:'#FFFFFF', padding:"30px"}}  >
                 <FormControl display={'flex'} flexDirection={'column'} alignItems={'center'} justifyContent={'center'} width={'100%'}>
             <Input 
+            fontFamily={'Manrope'}
                 onChange={handleLoginChange} 
                 marginTop={'16px'} color={'#fff'}  
                 type='email' name='logemail' 
                 value={userDetail.logemai} 
-                width={{base:'100%', md:'100%',lg:'50%'}} 
+                width={['100%']} 
                 placeholder='Your email' />
             <Input 
+            fontFamily={'Manrope'}
                 onChange={handleLoginChange} 
                 marginTop={'16px'}  
                 name='logpassword' 
                 value={userDetail.logpassword} 
-                color={'#fff'} 
-                width={{base:'100%', md:'100%',lg:'50%'}} 
+                color={'#000'} 
+                 width={['100%']}  
                 type='password' 
                 placeholder='Password' />
-              <Button  onClick={handleLoginSubmit} marginTop={'16px'}  >Sign In</Button>
+              <Button fontFamily={'Manrope'}  onClick={handleLoginSubmit} marginTop={'16px'}  >Sign In</Button>
             <FormHelperText color={'red'}>{loginErr}</FormHelperText>
         </FormControl>
       </form>

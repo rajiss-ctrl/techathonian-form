@@ -1,18 +1,24 @@
 import React,{useState,useEffect} from 'react'
 import {useNavigate} from 'react-router-dom';
 
-import {Stack} from '@chakra-ui/react'
+import {Flex} from '@chakra-ui/react'
 import RegForm from './components/RegForm';
+
 
 
 const SignUp = () => {
   const navigate = useNavigate()
 
-    const  userInput = [
-        {
+    const  userInput =[
+         {
     firstName:'',
     lastName:'',
     email:'',
+    stack:'',
+    experience:'',
+    gender:'',
+    beginner:'',
+    intermediate:'',
     male:'',
     female:'',
     others:'',
@@ -71,9 +77,9 @@ if(!values.firstName){
 if(!values.lastName){
   error.lastName = "Last Name is required"
 }
-if(!values.age){
-  error.age = "Select your date of birth"
-}
+// if(!values.age){
+//   error.age = "Select your date of birth"
+// }
 if(!values.password){
   error.password = "The field must be filled"
 }
@@ -93,19 +99,32 @@ if(!values.email){
 }else if(!regex.test(values.email)){
   error.email = "This is not a valid email"
 }
+if(!values.experience){
+  error.experience = "Select your experience level"
+}
+if(!values.gender){
+  error.gender = "Select your gender"
+}
+if(!values.stack){
+  error.stack = "Select your gender"
+}
+if(!values.age){
+  error.age = "Select DOB"
+}
+
 
 return error
 }
 
   return (
-    <Stack 
+    <Flex 
+           fontFamily={'Manrope'}
           min-height={'100vh'} 
-          display={'flex'} 
           paddingBottom={'50px'}
           justifyContent={'center'}
           alignItems={'center'}
           flexDirection={'column'} 
-          background={''}>
+          background={'#e7e7d8'}>
           {/* background={'rgb(14, 25, 71)'}> */}
     
       <RegForm 
@@ -114,8 +133,7 @@ return error
             handleChange={handleChange}
             handleSubmit={handleSubmit}
             />
-  
-    </Stack>
+    </Flex>
   )
 }
 

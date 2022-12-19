@@ -3,28 +3,27 @@ import { Box, Button, Checkbox, FormControl, FormHelperText, Heading, Input, Sel
 
 const RegForm = ({err,userData,handleChange,handleSubmit}) => {
  
-  return (
-              <FormControl 
-                  width={'100%'}
-                  display={'flex'} 
-                  justifyContent={'center'} 
-                  flexDirection={'column'} 
-                  alignItems={'center'}  
-                  >
+return (
+    <FormControl 
+      width={['100%','100%','100%','50%','','50%']}
+      fontFamily={'Manrope'}
+      display={'flex'} 
+      justifyContent={'center'} 
+      flexDirection={'column'} 
+      alignItems={'center'}  
+      >
         <Heading 
+        padding={"30px"}
               fontSize={{base:'23px', md:'40px', lg:'40px'}} 
               textAlign={'center'}
               width={'100%'}
               color={'rgb(29, 175, 210)'}>Become A Techathonian</Heading>
-       <form onSubmit={handleSubmit} style={{width:'80%'}}>
+       <form onSubmit={handleSubmit} style={{width:'90%', background:'#FFFFFF',padding:"20px"}}>
             
-            <Input 
-                  variant={'flushed'} 
+            <Input  
                   marginTop={'15px'}
                   width={'100%'} 
-                  borderBottom={'1px'} 
-                  padding={'10px'} 
-                  borderColor={'rgb(29, 175, 210)'} 
+                  padding={'10px'}  
                   type='text' 
                   color={'#000'} 
                   name='firstName' 
@@ -35,13 +34,10 @@ const RegForm = ({err,userData,handleChange,handleSubmit}) => {
             
           
           <Input 
+                marginTop={'15px'}
+                width={'100%'} 
+                padding={'10px'}  
                 type='text' 
-                variant={'flushed'} 
-                 width={'100%'}
-                marginTop={'15px'} 
-                padding={'10px'} 
-                borderBottom={'1px'} 
-                borderColor={'rgb(29, 175, 210)'} 
                 color={'#000'} 
                 onChange={handleChange} 
                 name='lastName' 
@@ -51,59 +47,79 @@ const RegForm = ({err,userData,handleChange,handleSubmit}) => {
           
           <Input 
                 type='email' 
-                variant={'flushed'} 
-                 width={'100%'}
-                marginTop={'15px'} 
-                padding={'10px'} 
-                borderBottom={'1px'} 
-                borderColor={'rgb(29, 175, 210)'} 
+                width={'100%'}
+                marginTop={'15px'}
+                padding={'10px'}  
                 color={'#000'} 
                 onChange={handleChange} 
                 name='email' 
-                value={userData.lastemail} 
+                value={userData.email} 
                 placeholder='Your Email' />
             <FormHelperText color={'red'} paddingLeft={'10px'}>{err.email}</FormHelperText>
 
+          <Input 
+                type='text' 
+                width={'100%'}
+                marginTop={'15px'}
+                padding={'10px'}  
+                color={'#000'} 
+                onChange={handleChange} 
+                name='stack' 
+                value={userData.stack} 
+                placeholder='Your Stack' />
+            <FormHelperText color={'red'} paddingLeft={'10px'}>{err.stack}</FormHelperText>
+            <Select 
+                  border={'none'} 
+                  width={'100%'}
+                  marginTop={'15px'}   
+                  color={'#000'}
+                  value={userData.experience}
+                  name='experience'  
+                  onChange={handleChange}
+                  select
+                  
+                  >
+                <option color={'grey'}  value={""}>Experience</option>
+                <option color={'grey'}  value={"beginner"}>Beginner</option>
+                <option color={'grey'}  value={"intermediate"}>Intermediate</option>
+            </Select>
+            <FormHelperText color={'red'} paddingLeft={'10px'}>{err.experience}</FormHelperText>
       
             <Select 
-                  variant={'flushed'} 
                   border={'none'} 
-                   width={'100%'}
-                  marginTop={'15px'} 
-                  paddingLeft={'10px'}  
-                  color={'#000'}  
+                  width={'100%'}
+                  marginTop={'15px'}   
+                  color={'#000'}
+                  value={userData.gender}
+                  name='gender'  
                   onChange={handleChange}
-                  required
+                  select
+                  
                   >
-                <option   name=''  value=''>Select you gender</option>
-                <option   name='male'  value={userData.male}>Male</option>
-                <option   name='female' value={userData.fenale}>Female</option>
-                <option   name='others' value={userData.others}>Others</option>
+                <option color={'grey'}  value={""}>Gender</option>
+                <option color={'grey'}  value={"male"}>Male</option>
+                <option color={'grey'}  value={"female"}>Female</option>
+                <option color={'grey'}  value={"others"}>Others</option>
             </Select>
-            
-        
+            <FormHelperText color={'red'} paddingLeft={'10px'}>{err.gender}</FormHelperText>
+                    
             <Input 
-                  variant={'flushed'} 
                   marginTop={'15px'} 
                   padding={'10px'} 
-                 width={'100%'}
-                  borderBottom={'1px'} 
-                  borderColor={'rgb(29, 175, 210)'} 
+                  width={'100%'}
                   color={'#000'} 
                   onChange={handleChange} 
                   type='date' 
                   name='age' 
-                  value={userData.age} 
-                  placeholder='Your Age' />
+                  value={userData.age}
+                   
+                  placeholder='Your Age'/>
             <FormHelperText color={'red'} paddingLeft={'10px'}>{err.age}</FormHelperText>
            
             <Input 
-                  variant={'flushed'} 
                   marginTop={'15px'} 
                   padding={'10px'}
                   width={'100%'} 
-                  borderBottom={'1px'} 
-                  borderColor={'rgb(29, 175, 210)'} 
                   color={'#000'}  
                   onChange={handleChange} 
                   type='password' 
@@ -113,13 +129,10 @@ const RegForm = ({err,userData,handleChange,handleSubmit}) => {
             <FormHelperText color={'red'} paddingLeft={'10px'}>{err.password}</FormHelperText>
             
 
-            <Input 
-                  variant={'flushed'} 
+            <Input  
                   marginTop={'15px'} 
                   padding={'10px'}
-                  width={'100%'} 
-                  borderBottom={'1px'} 
-                  borderColor={'rgb(29, 175, 210)'} 
+                  width={'100%'}  
                   color={'#000'} 
                   onChange={handleChange} 
                   type='password' 
@@ -129,17 +142,15 @@ const RegForm = ({err,userData,handleChange,handleSubmit}) => {
             <FormHelperText color={'red'} paddingLeft={'10px'}>{err.confirmP}</FormHelperText>
 
             
-            <Textarea 
-                    border={'1px'} 
+            <Textarea  
                     marginTop={'15px'} 
                     padding={'10px'} 
                      width={'100%'}
-                    borderColor={'rgb(29, 175, 210)'} 
                     color={'#000'} 
                     onChange={handleChange} 
                     name='describe' 
                     value={userData.describe} 
-                    placeholder='Describe Yourself' />
+                    placeholder='Describe Yourself (30 words)' />
             <FormHelperText color={'red'} paddingLeft={'10px'}>{err.describe}</FormHelperText>
 
         

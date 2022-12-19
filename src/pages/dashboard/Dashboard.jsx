@@ -1,5 +1,5 @@
 import React,{useState,useEffect} from 'react'
-import {Flex,Box,Button,Heading, VStack,Text, Image} from '@chakra-ui/react'
+import {Flex,Box,Button,Heading, Table,Text, Image,TableCaption,Th,Tr,Thead,Tbody,Td} from '@chakra-ui/react'
 import {  useNavigate } from 'react-router-dom'
 
 
@@ -25,23 +25,58 @@ const Dashboard = () => {
 
 console.log(apiData)
   return (
-    <Box width={'100%'} padding={{base:'60px', md:'30px'}}>
+    <Box fontFamily={'Manrope'} background={'#e7e7d8'} height={'100vh'} width={'100%'} padding={['20px','20px','30px','60px','60px']}>
 
-    <VStack width={'100%'} >
-      <Heading marginBottom={'40px'} textAlign={'center'}>Welcome : {userDisplaDetails.firstName}</Heading>
+    <Box width={'100%'} >
+      <Heading marginBottom={'40px'}>Welcome : {userDisplaDetails.firstName}</Heading>
       <Box>
-        <Box width={'100%'}>
-          <Box width={'100%'} display={'flex'} alignItems={'center'}><Heading fontSize={{base:'12px', md:'23px'}} marginRight={'10px'}>Name:</Heading> <Text>{userDisplaDetails.firstName} {userDisplaDetails.lastName}</Text>  </Box>
-          <Box width={'100%'} display={'flex'} alignItems={'center'}><Heading fontSize={{base:'12px', md:'23px'}} marginRight={'10px'}>Email:</Heading> <Text>{userDisplaDetails.email}</Text> </Box>
-          <Box width={'100%'} display={'flex'} alignItems={'center'}><Heading fontSize={{base:'12px', md:'23px'}} marginRight={'10px'}>Date of Birth:</Heading> <Text>{userDisplaDetails.age}</Text>  </Box>
-          <Box width={'100%'} ><Heading fontSize={{base:'12px', md:'23px'}}color={'red'}>Description</Heading><Text padding={'10px'} marginTop={'20px'} marginBottom={'20px'} borderColor={'green'} border={'1px solid'}>{userDisplaDetails.describe}</Text> </Box>
+        <Heading  fontSize={'20px'}>Profile</Heading>
+  <Box width={['100%','100%','100%','80%','50%']} >
+
+    <Box width={['100%','100%','100%','80%','80%']}  marginTop={'10px'}>
+        <Heading borderBottom={'1px'} borderColor={'grey'} marginBottom={'10px'} width={'100%'}  fontSize={['12px']} display={'flex'} justifyContent={'flex-start'} gap={'20px'}>
+          <Text  width={'30%'} fontSize={['12px','12px','14px','20px','20px']}>Full Name</Text>
+          <Text  width={'70%'} color={'grey'} fontSize={['12px','12px','14px','20px','20px']}>
+          {userDisplaDetails.firstName} {userDisplaDetails.lastName}
+          </Text>
+        </Heading>
+        <Heading borderBottom={'1px'} borderColor={'grey'} marginBottom={'10px'} width={'100%'} display={'flex'} justifyContent={'flex-start'} gap={'20px'} fontSize={['12px']}>
+          <Text width={'30%'} fontSize={['12px','12px','14px','20px','20px']}> E Mail</Text>
+          <Text width={'70%'} color={'grey'} fontSize={['12px','12px','14px','20px','20px']}>
+          {userDisplaDetails.email}
+          </Text>
+        </Heading>
+        <Heading borderBottom={'1px'} borderColor={'grey'} marginBottom={'10px'} width={'100%'} display={'flex'} justifyContent={'flex-start'} gap={'20px'} fontSize={['12px']}>
+          <Text  width={'30%'} fontSize={['12px','12px','14px','20px','20px']}>Date Of Birth</Text>
+          <Text  width={'70%'} color={'grey'} fontSize={['12px','12px','14px','20px','20px']} >
+            {userDisplaDetails.age}
+          </Text>
+        </Heading>
+    </Box>
+
+  </Box>
+
+        <Box width={'100%'}   display={'flex'} justifyContent={'space-around'} flexDir={['column','column','column','row','row']}>
+          <Box padding={'10px'} width={'50%'} display={'grid'} placeContent={'left'}>
+            <Text fontSize={'30px'}>{userDisplaDetails.stack}</Text>
+            <Text fontSize={'30px'}>{userDisplaDetails.experience}</Text>
+          </Box>
+
+          <Box width={['100%','100%','100%','50%','50%']} background={'#FFFFFF'} padding={'20px'} borderRadius={'10px'}>
+            <Heading fontSize={{base:'12px', md:'23px'}}color={'red'}>
+              About Me
+            </Heading>
+          <Text  marginTop={'20px'} marginBottom={'20px'}>
+            {userDisplaDetails.describe}
+            </Text> 
+          </Box>
       </Box>
       </Box>
   
-</VStack>
+</Box>
 
 
-          <Heading textAlign={'center'} fontSize={'24px'}>TECHATHON RESTAURANT</Heading>
+{/* <Heading textAlign={'center'} fontSize={'24px'}>TECHATHON RESTAURANT</Heading>
 <Flex  flexWrap={'wrap'}>
   {apiData.map((item)=>{
     return (
@@ -53,10 +88,10 @@ console.log(apiData)
  </Box>
     )
   })}
-  </Flex>
-      <Flex justifyContent={'right'} >
+  </Flex> */}
+<Flex justifyContent={'center'} marginTop={'50px'} >
   <Button 
-          background={'blue'}
+          background={'red'}
           color={'white'} 
           onClick={()=>{
           sessionStorage.removeItem('user')

@@ -3,8 +3,8 @@ import React from 'react'
 
 const Error = () => {
   return (
-    <Flex height={'80vh'} justifyContent={'center'} alignItems={'center'}>
-      <Heading color={'red'} fontSize={'50px'}>Page does not exist on our site!!!</Heading>
+    <Flex fontFamily={'Manrope'} height={'80vh'} justifyContent={'center'} alignItems={'center'}>
+      <Heading color={'red'} fontSize={'20px'}>Oops, page does not exist!</Heading>
     </Flex>
   )
 }
