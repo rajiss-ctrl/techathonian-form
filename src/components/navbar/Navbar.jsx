@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import {FaBars, FaTimes } from 'react-icons/fa'
 import { NavLink} from 'react-router-dom'
 
@@ -6,19 +6,13 @@ import { NavLink} from 'react-router-dom'
 import {
         Box,
         Flex,
-       Image,
        List,
        ListItem,
        Text
       } from "@chakra-ui/react";
 
 
-const Navbar = () => {
-const [toggle,setToggle] =useState(false)
-
-const handleToggle = ()=>{
-    setToggle(pre=>!pre)    
-}
+const Navbar = ({toggle,handleToggle}) => {
 
   return (
       <Flex 
@@ -50,6 +44,7 @@ const handleToggle = ()=>{
                 </Box>
         <List 
                 fontFamily={'Manrope'}
+                transform={'transition 3s ease in'}
                 display={[toggle ? 'block' : 'none' ,toggle ? 'block' : 'none','flex','flex','flex']}
                 alignItems={'center'} 
                 // justifyContent={'space-between'} 
@@ -62,24 +57,24 @@ const handleToggle = ()=>{
                 width={['100%','100%','44%','30%','25%']}
                 zIndex={'1'}
                 >
-           <ListItem marginBottom={['10px','10px','0','0','0']}><NavLink 
+           <ListItem  marginBottom={['10px','10px','0','0','0']}><NavLink 
                   style={({isActive})=> isActive ? 
-                  {color:'#000000',padding:'0 15px', background:'white', borderRadius:'10px'} : 
+                  {color:'#000000',padding:'5px 15px', background:'white', borderRadius:'10px'} : 
                   {color:'#FFFFFF'}} to='/'>Home</NavLink></ListItem>
           
           <ListItem marginBottom={['10px','10px','0','0','0']}><NavLink 
                   style={({isActive})=> isActive ? 
-                  {color:'#000000',padding:'0 15px', background:'white',borderRadius:'10px'} : 
+                  {color:'#000000',padding:'5px 15px', background:'white',borderRadius:'10px'} : 
                   {color:'#FFFFFF'}} to='/dashboard'> Dashboard</NavLink></ListItem>
           
           <ListItem marginBottom={['10px','10px','0','0','0']}><NavLink 
                   style={({isActive})=> isActive ? 
-                  {color:'#000000',padding:'0 15px', background:'white' , borderRadius:'10px'} : 
+                  {color:'#000000',padding:'5px 15px', background:'white' , borderRadius:'10px'} : 
                   {color:'#FFFFFF'}} to='/login'>Log In</NavLink></ListItem>
           
           <ListItem marginBottom={['10px','10px','0','0','0']}><NavLink 
                 style={({isActive})=> isActive ? 
-                {color:'#000000',padding:'0 15px', background:'white',borderRadius:'10px'} : 
+                {color:'#000000',padding:'5px 15px', background:'white',borderRadius:'10px'} : 
                 {color:'#FFFFFF'}} to='/signup'>Sign Up</NavLink></ListItem>
         </List>  
       </Flex>

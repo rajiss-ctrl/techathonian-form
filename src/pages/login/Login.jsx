@@ -1,5 +1,5 @@
 import React,{useEffect, useState} from 'react'
-import {useNavigate} from 'react-router-dom';
+import {Link, useNavigate} from 'react-router-dom';
 
 import {
         Stack,
@@ -8,7 +8,8 @@ import {
         Input, 
         FormControl,  
         FormHelperText,
-        Button
+        Button,
+        Box
       } from '@chakra-ui/react'
 
 const Login = () => {
@@ -101,7 +102,9 @@ if(userDetail?.logemail !== user?.email && userDetail?.logpassword !== user?.pas
             <FormHelperText color={'red'}>{loginErr}</FormHelperText>
         </FormControl>
       </form>
+      <Box width={'90%'} color={'blue'} paddingTop={'10px'}  textDecor={'none'} textAlign={'right'}><Link to='/signup'>Not registered? Sign Up here</Link></Box>
     </Flex>
+    
     </Stack>
   )
 }

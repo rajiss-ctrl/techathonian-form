@@ -8,15 +8,21 @@ import Error from './components/Error';
 import Home from './pages/home/Home';
 import Layout from './components/Layout';
 import ProtectedRoute from './components/ProtectedRoute';
+import { useState } from 'react';
 
 
 
 
 function App() {
+  const [toggle,setToggle] =useState(false)
+
+const handleToggle = ()=>{
+    setToggle(pre=>!pre)    
+}
   return (
 <>
   <Routes >
-    <Route path={'/'} element={<Layout/>}>
+    <Route path={'/'} element={<Layout toggle={toggle} handleToggle={handleToggle}/>}>
         <Route index element={<Home/>}/>
         <Route path={'signup'} element={<SignUp/>}/>
         <Route path={'login'} element={<Login/>}/>
